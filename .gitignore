@@ -1,0 +1,17 @@
+# Cloudflare 統計後端不隨公開網站發布
+statistics-service/
+
+# 影片改由 YouTube 提供，避免超過 GitHub 容量限制
+*.mp4
+*.m4a
+*.mov
+*.avi
+
+# 教材原始檔不屬於公開網站發布內容
+*.ppt
+*.pptx
+
+# 作業系統暫存檔
+Thumbs.db
+.DS_Store
+

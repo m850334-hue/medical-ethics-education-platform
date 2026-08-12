@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>依主題學習｜醫學倫理教學平台</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--ink:#162b46;--muted:#526a82;--teal:#347c78;--teal-dark:#245f5c;--line:#d8e3eb;--soft:#eef7f6;--page:#f4f7f9;--white:#fff}
+    *{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,"Microsoft JhengHei",sans-serif}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:#fff;border-bottom:1px solid var(--line)}
+    .brand{font-weight:800;color:var(--ink);text-decoration:none}.back{color:var(--teal-dark);font-weight:700;text-decoration:none}
+    .hero{padding:44px 5vw 38px;background:#fff;border-bottom:1px solid var(--line)}.hero-inner,.page{max-width:1180px;margin:auto}
+    .eyebrow{color:var(--teal);font-weight:800;letter-spacing:.12em}h1{font-size:clamp(2rem,4vw,3.3rem);margin:10px 0 12px}.lead{max-width:780px;color:var(--muted);font-size:1.08rem;line-height:1.8}
+    .page{padding:28px 24px 60px}.topics{display:flex;gap:9px;overflow:auto;padding:2px 2px 14px;scrollbar-width:thin}.topic-button{flex:0 0 auto;border:1px solid #bfd3d5;border-radius:999px;background:#fff;color:var(--teal-dark);cursor:pointer;font-weight:800;padding:10px 15px}.topic-button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.topic-button:focus-visible,.course-link:focus-visible{outline:3px solid #8dc7c2;outline-offset:2px}
+    .topic-head{background:linear-gradient(135deg,#fff 0%,#eef7f6 100%);border:1px solid #cfe0e2;border-radius:18px;padding:28px;margin:12px 0 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}.topic-head h2{font-size:clamp(1.6rem,3vw,2.35rem);margin:7px 0 12px}.topic-head p{color:var(--muted);line-height:1.75;margin:0}.count{min-width:122px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.count strong{display:block;color:var(--teal);font-size:2rem}.count span{color:var(--muted);font-size:.9rem}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:30px 0 14px}.section-title h2{margin:0;font-size:1.5rem}.section-title p{margin:0;color:var(--muted)}
+    .route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:step}.course-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;min-height:245px;counter-increment:step}.course-card::before{content:counter(step);position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--teal-dark);font-weight:900}.course-code{color:var(--teal);font-weight:900;letter-spacing:.08em}.course-card h3{font-size:1.2rem;line-height:1.5;margin:14px 42px 10px 0}.reason{color:var(--muted);line-height:1.65;margin:0 0 20px;flex:1}.course-link{display:inline-block;align-self:flex-start;background:var(--teal);border-radius:8px;color:#fff;font-weight:800;padding:10px 14px;text-decoration:none}.course-link:hover{background:var(--teal-dark)}
+    .extensions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.extension{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 17px;text-decoration:none;color:var(--ink)}.extension:hover{border-color:var(--teal)}.extension strong{color:var(--teal);margin-right:9px}.extension span:last-child{color:var(--teal-dark);font-weight:800;white-space:nowrap}
+    .series-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.scenario-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;min-height:178px}.scenario-card h3{font-size:1.08rem;line-height:1.5;margin:10px 0 8px}.scenario-card .reason{margin-bottom:16px}.scenario-card .course-link{margin-top:auto}
+    @media(max-width:900px){.route{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){.page{padding-inline:16px}.topic-head{grid-template-columns:1fr;padding:22px}.count{text-align:left}.count strong{display:inline;margin-right:6px}.route,.extensions,.series-two{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.topbar{padding-inline:18px}.hero{padding-inline:20px}}
+  </style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+  
+  <header class="hero"><div class="hero-inner"><div class="eyebrow">LEARN BY TOPIC</div><h1>依主題學習</h1><p class="lead">從你正在面對的倫理問題出發，依建議順序完成核心課程，再視需要選擇延伸學習。</p></div></header>
+  <main class="page">
+    <nav class="topics" id="topic-nav" aria-label="倫理主題"></nav>
+    <section class="topic-head" aria-live="polite"><div><div class="eyebrow">ETHICS TOPIC</div><h2 id="topic-title"></h2><p id="topic-intro"></p></div><div class="count"><strong id="core-count"></strong><span>核心課程</span></div></section>
+    <div class="section-title"><div><div class="eyebrow">LEARNING PATH</div><h2>建議學習順序</h2></div><p>先建立概念，再進入具體臨床情境。</p></div>
+    <section class="route" id="core-courses" aria-label="核心課程"></section>
+    <div class="section-title" id="extension-heading"><div><div class="eyebrow">EXTENDED LEARNING</div><h2>延伸學習</h2></div><p>依工作情境選擇補充。</p></div>
+    <section class="extensions" id="extended-courses" aria-labelledby="extension-heading"></section>
+    <div class="section-title" id="series-two-heading"><div><div class="eyebrow">SERIES TWO</div><h2>第二系列｜情境演練與進階應用</h2></div><p>運用臨床案例深化判斷與實務回應。</p></div>
+    <section class="series-two" id="series-two-courses" aria-labelledby="series-two-heading"></section>
+  </main>
+  <script>
+    const course={
+      A1:['醫學倫理不是只有法律問題','course-a1-final-v2.html'],A2:['醫學倫理四大原則','course-a2-final.html'],A3:['病人最佳利益與代理決定','course-a3-final.html'],A4:['遇到倫理困境時，臨床團隊如何整理問題？','course-a4-final.html'],
+      B1:['病人權利是什麼？','course-b1-final.html'],B2:['尊重病人自主與知情同意','course-b2-final.html'],B3:['病人隱私、保密與資訊揭露','course-b3-final.html'],B4:['身體隱私與照護尊嚴','course-b4-final.html'],
+      C1:['病人拒絕治療時，醫療團隊可以怎麼做？','course-c1-final.html'],C2:['當病人、家屬與醫療團隊意見不一致時','course-c2-final.html'],C3:['治療效益有限時，如何與家屬討論照護目標？','course-c3-final.html'],C4:['醫療團隊內部意見不同時，如何進行倫理討論？','course-c4-final.html'],
+      D1:['家屬要求不要告訴病人病情，怎麼辦？','course-d1-final.html'],D2:['家屬來電詢問病情，可以直接告知嗎？','course-d2-final.html'],D3:['拍照、錄影與病人隱私','course-d3-final.html'],D4:['教學簡報使用病人照片或案例，要注意什麼？','course-d4-final.html'],
+      E1:['讓病人真正參與醫療決策','course-e1-final.html'],E2:['知情同意，不只是簽名','course-e2-final.html'],E3:['病人說：「都交給醫師決定。」','course-e3-final.html'],E4:['當家屬希望暫時不要告知病人','course-e4-final.html'],E5:['病人拒絕侵入性處置，怎麼回應？','course-e5-final.html'],E6:['病房走廊談病情，可以嗎？','course-e6-final.html'],E7:['電話詢問病情，可以直接說嗎？','course-e7-final.html'],E8:['病人與家屬意見不同，該聽誰的？','course-e8-final.html'],E9:['病人拒絕住院，怎麼辦？','course-e9-final.html'],E10:['病人說：「我真的不能再住了。」','course-e10-final.html'],E11:['家屬彼此意見不同，醫療團隊怎麼辦？','course-e11-final.html'],E12:['忙碌時，可以省略說明嗎？','course-e12-final.html'],E13:['用通訊軟體傳送病人資料，可以嗎？','course-e13-final.html'],E14:['醫療團隊意見不同，病人該聽誰的？','course-e14-final.html'],E15:['什麼時候需要倫理諮詢？','course-e15-final.html'],E16:['遇到倫理困境，第一步是什麼？','course-e16-final.html'],E17:['每個方案都有風險，該怎麼選？','course-e17-final.html'],E18:['倫理決定如何落實在照護中？','course-e18-final.html']
+    };
+    const topics={
+      autonomy:{label:'病人自主',intro:'理解病人如何參與醫療決定、表達價值與偏好，以及醫療團隊如何支持具有決定能力的病人作出選擇。',core:[['A2','先掌握尊重自主與其他倫理原則的關係。'],['B2','理解充分說明、理解與自由選擇的臨床實踐。'],['C1','練習面對病人作出不同於醫療建議的決定。']],extra:['A3','D1'],series2:[['E1','練習讓病人實際參與醫療決策。'],['E3','回應病人把決定交給醫師的情境。'],['E5','在拒絕處置時兼顧自主與安全。']]},
+      consent:{label:'知情同意',intro:'從說明、理解到自願選擇，辨識知情同意不是單純簽署文件，而是一段持續的溝通過程。',core:[['A2','建立尊重自主的倫理基礎。'],['B2','完整學習知情同意的核心要素。'],['C1','把理解與選擇落實在拒絕治療情境。']],extra:['A1','D1'],series2:[['E2','辨識知情同意不只是簽名。'],['E12','在時間壓力下維持必要說明與理解。']]},
+      refusal:{label:'拒絕治療',intro:'面對病人拒絕醫療時，先確認理解與決定能力，再探索原因、替代方案與後續安全安排。',core:[['A1','先分辨法律底線與倫理判斷。'],['B2','確認病人是否真正理解資訊與風險。'],['C1','完整練習拒絕治療的臨床回應。']],extra:['A2','C2'],series2:[['E5','練習回應病人拒絕侵入性處置。'],['E9','處理病人拒絕住院與後續安全安排。']]},
+      rights:{label:'病人權利',intro:'理解病人在日常照護中應被尊重、告知、保護及參與決定的基本權利。',core:[['B1','建立病人權利的整體概念。'],['B2','聚焦知情與參與醫療決定。'],['B4','將尊重落實到身體隱私與照護細節。']],extra:['B3','C1'],series2:[['E1','將病人參與落實在實際決策。'],['E2','保障病人的知情理解與選擇。'],['E6','在日常病房溝通中維護隱私。']]},
+      family:{label:'家屬與代理決策',intro:'釐清病人、家屬與代理人的角色，並在病人無法表達或各方意見不同時，回到病人的意願與最佳利益。',core:[['A3','掌握先前意願、代理決定與最佳利益。'],['C2','理解病人、家屬與團隊分歧的處理。'],['D1','練習家屬要求隱瞞病情時的回應。']],extra:['C3','D2'],series2:[['E4','回應家屬希望暫時不告知病人的要求。'],['E8','處理病人與家屬意見不同的情境。'],['E11','協助意見不同的家屬形成共同計畫。']]},
+      privacy:{label:'隱私與保密',intro:'辨識病情、病歷、影像、身體暴露及可推知身分的資料，並依必要範圍安全使用與揭露。',core:[['B3','先建立資訊保密與最小必要原則。'],['B4','把隱私概念延伸到身體與照護尊嚴。'],['D2','練習電話詢問病情時的身分與授權確認。'],['D3','處理拍照、錄影、保存與使用的風險。']],extra:['D4'],series2:[['E6','辨識在病房走廊談病情的風險。'],['E7','練習電話詢問病情時的安全回應。'],['E13','安全使用通訊軟體傳送病人資料。']]},
+      communication:{label:'醫療溝通',intro:'在病情告知、目標討論、拒絕治療及意見不一致時，以清楚、尊重且一致的方式促進理解。',core:[['A4','先把複雜困境整理成可討論的問題。'],['C2','練習處理病人、家屬與團隊的分歧。'],['C3','將單一處置爭議轉向整體照護目標。']],extra:['D1','D2'],series2:[['E3','支持病人表達價值並參與決定。'],['E4','在告知衝突中促進病人與家屬對話。'],['E10','理解病人急著離院背後的原因。'],['E12','忙碌時仍完成必要說明與確認理解。']]},
+      team:{label:'醫療團隊合作',intro:'整合不同專業角色的觀察與價值判斷，在對外說明前形成可追蹤、較一致的團隊訊息。',core:[['A4','建立跨團隊倫理問題整理架構。'],['C2','辨識不同立場背後的需求與資訊落差。'],['C4','練習事實、價值與多專業觀點的整合。']],extra:['C3'],series2:[['E11','由團隊協助家屬整理分歧。'],['E14','先整合不同專業意見再向病人說明。'],['E18','把團隊共識落實為共同照護計畫。']]},
+      continuity:{label:'醫療安全與照護連續性',intro:'讓倫理決定不只停留在討論，而能延續到替代方案、安全建議、交班、追蹤與實際照護。',core:[['C1','將拒絕治療轉化為安全替代與追蹤安排。'],['C3','依病人現況調整照護目標而非停止照顧。'],['D2','在資訊揭露與緊急決策間維持安全流程。']],extra:['C2','C4'],series2:[['E5','拒絕處置後仍提供替代方案與安全安排。'],['E9','拒絕住院時建立可行的追蹤計畫。'],['E10','在病人急著離院時調整照護安排。'],['E18','透過溝通、紀錄、交班與追蹤落實決定。']]},
+      consultation:{label:'臨床倫理辨識與諮詢',intro:'辨識問題屬於醫療事實、法規、溝通或價值衝突，並判斷何時需要跨團隊或倫理諮詢支持。',core:[['A1','建立倫理問題不等同法律問題的觀念。'],['A4','學會系統整理倫理困境。'],['C4','在團隊重大分歧時進行倫理討論。']],extra:['C2','C3'],series2:[['E15','辨識倫理諮詢的適用時機與角色。'],['E16','從事實、決策者、價值與問題開始整理。'],['E17','比較各方案的利益、負擔與倫理理由。'],['E18','將倫理分析轉化為可執行的照護計畫。']]}
+    };
+    const nav=document.getElementById('topic-nav'),title=document.getElementById('topic-title'),intro=document.getElementById('topic-intro'),count=document.getElementById('core-count'),core=document.getElementById('core-courses'),extended=document.getElementById('extended-courses'),seriesTwo=document.getElementById('series-two-courses');
+    nav.innerHTML=Object.entries(topics).map(([key,item])=>`<button class="topic-button" type="button" data-topic="${key}" aria-pressed="false">${item.label}</button>`).join('');
+    function showTopic(key,updateHash=true){const item=topics[key]||topics.privacy;const active=topics[key]?key:'privacy';title.textContent=item.label;intro.textContent=item.intro;count.textContent=item.core.length;core.innerHTML=item.core.map(([code,reason])=>`<article class="course-card"><div class="course-code">第一系列｜${code}</div><h3>${course[code][0]}</h3><p class="reason">${reason}</p><a class="course-link" href="${course[code][1]}">進入課程 →</a></article>`).join('');extended.innerHTML=item.extra.map(code=>`<a class="extension" href="${course[code][1]}"><span><strong>${code}</strong>${course[code][0]}</span><span>進入 →</span></a>`).join('');seriesTwo.innerHTML=item.series2.map(([code,reason])=>`<article class="scenario-card"><div class="course-code">第二系列｜${code}</div><h3>${course[code][0]}</h3><p class="reason">${reason}</p><a class="course-link" href="${course[code][1]}">進入課程 →</a></article>`).join('');document.querySelectorAll('.topic-button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.topic===active)));if(updateHash)history.replaceState(null,'','#'+active)}
+    nav.addEventListener('click',event=>{const button=event.target.closest('[data-topic]');if(button)showTopic(button.dataset.topic)});
+    window.addEventListener('hashchange',()=>showTopic(location.hash.slice(1),false));
+    showTopic(location.hash.slice(1)||'privacy',false);
+  </script>
+</body>
+</html>

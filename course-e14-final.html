@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+.media iframe{width:100%;height:100%;border:0;border-radius:12px}</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E14｜醫療團隊意見不同，病人該聽誰的？</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .course-hero{padding:42px 5vw 52px;background:#eef7f6;border-bottom:1px solid #d8e5e5}.course-hero h1{margin:12px 0 14px;color:#162b46;font-size:clamp(2rem,4vw,3.5rem)}.course-hero p{color:#49637e;font-size:1.08rem}.course-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(260px,1fr);gap:24px;max-width:1180px;margin:34px auto;padding:0 24px}.card{background:#fff;border:1px solid #d8e3eb;border-radius:14px;padding:24px;margin-bottom:24px}.media{background:#192e49;border-radius:12px;aspect-ratio:16/9}.media video{width:100%;height:100%;border-radius:12px;object-fit:contain}.side .button{display:block;width:100%;box-sizing:border-box;margin:12px 0;padding:13px;text-align:center;border-radius:8px;text-decoration:none;font-weight:700;background:#57928c;color:#fff}.side .button.secondary{background:#edf5f4;color:#286d69}.meta p{margin:12px 0;color:#304b68}.back{display:inline-block;padding:18px 5vw;color:#286d69;font-weight:700;text-decoration:none}@media(max-width:780px){.course-layout{grid-template-columns:1fr;padding:0 16px}}
+  </style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+  <a class="back" href="series.html#series-e">← 返回第二系列</a>
+  <header class="course-hero">
+    <div class="eyebrow">E14｜第二系列・臨床倫理情境案例</div>
+    <h1>醫療團隊意見不同，病人該聽誰的？</h1>
+    <p>先整合專業意見，再與病人共同決策</p>
+  </header>
+  <main class="course-layout">
+    <section>
+      <article class="card"><div class="media" id="video"><div id="youtube-player" aria-label="E14 課程影片"></div></div></article>
+      <article class="card"><h2>課程簡介</h2><p>透過腦中風病人從醫師與語言治療師處聽到看似不同進食建議的情境，思考醫療團隊如何釐清評估時間與適用條件、整合不同專業觀點，並向病人提供清楚且可執行的照護建議。</p></article>
+      <article class="card"><h2>學習重點</h2><ul><li>辨識不同建議背後可能存在的評估時間、條件與專業觀點。</li><li>釐清目前病況、風險、照護目標及各項建議的適用條件。</li><li>整合專業資訊，形成一致且可執行的照護計畫。</li><li>向病人提供清楚的整合說明，並邀請病人共同參與決策。</li></ul></article>
+    </section>
+    <aside>
+      <div class="card side"><h2>本集教材</h2><a class="button" href="#video" id="play-course-video">開始觀看影片</a><a class="button secondary" href="assets/series2/E14/E14-醫療團隊意見不同病人該聽誰的_一頁式資訊圖_橫式16x9_新架構_v1.png" target="_blank">瀏覽一頁式資訊圖</a><a class="button" href="quiz-e14.html">進入課後測驗</a></div>
+      <div class="card meta"><h2>課程資訊</h2><p>所屬系列：第二系列</p><p>教育類別：醫學倫理</p><p>本集能力焦點：跨專業協作與處理倫理分歧</p><p>建議學習時間：約 6 分鐘</p><p>課後測驗：5 題單選題</p></div>
+    </aside>
+  </main>
+
+<script src="assets/platform-analytics.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+PlatformAnalytics.track('course_view',{course_id:'E14',series_id:'series_2',once_key:'course_view:E14'});
+let coursePlayer;
+function onYouTubeIframeAPIReady(){
+  coursePlayer=new YT.Player('youtube-player',{
+    videoId:'UTzxzW9VWMs',
+    playerVars:{rel:0,playsinline:1},
+    events:{onStateChange:(event)=>{
+      if(event.data===YT.PlayerState.PLAYING){
+        PlatformAnalytics.track('video_start',{course_id:'E14',series_id:'series_2',once_key:'video_start:E14'});
+      }
+    }}
+  });
+}
+document.getElementById('play-course-video')?.addEventListener('click',(event)=>{
+  event.preventDefault();
+  document.getElementById('video').scrollIntoView({behavior:'smooth',block:'center'});
+  if(coursePlayer&&coursePlayer.playVideo)coursePlayer.playVideo();
+});
+document.querySelector('a[href*="series2/"]')?.addEventListener('click',()=>{
+  PlatformAnalytics.track('infographic_open',{course_id:'E14',series_id:'series_2',once_key:'infographic_open:E14'});
+});
+</script>
+</body>
+</html>

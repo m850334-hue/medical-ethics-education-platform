@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E10｜課後測驗</title>
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<style>body{font-family:Arial,"Microsoft JhengHei";margin:0;background:#f4f8f8;color:#162b46}.hero{padding:30px 7%;background:#eef7f6}.wrap{max-width:900px;margin:25px auto}.mode button,#submit{padding:11px 18px;margin-right:8px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold}.active,#submit{background:#4f8e88!important;color:white!important}.q{background:white;border:1px solid #d7e2e8;border-radius:12px;padding:18px;margin:14px 0}.q.wrong{border:3px solid #c94b4b;background:#fff8f8}.opt{display:block;padding:8px}.exp{display:none;background:#eff8f5;border-left:4px solid #4f8e88;padding:10px;margin-top:10px}.fb{margin-top:8px;font-weight:bold}.result{display:none;background:white;border:2px solid #4f8e88;border-radius:10px;padding:18px;margin-top:20px}</style>
+<style>@media(max-width:700px){.hero{padding:24px 20px}.wrap{margin:18px 14px}.mode{display:grid;gap:8px}.mode button,#submit{width:100%;margin:0}.q{padding:16px}.q h2{font-size:1.15rem;line-height:1.5}.opt{padding:11px 6px}}</style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+<div class="hero"><div>E10｜第二系列・臨床倫理情境案例</div><h1>病人說：「我真的不能再住了。」｜課後測驗</h1><p>透過練習模式熟悉重點，或進入正式測驗檢核學習成果。</p><a href="course-e10-final.html" style="display:inline-block;margin-top:14px;padding:10px 18px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold;text-decoration:none">← 返回 E10 課程</a></div><main class="wrap"><div class="mode"><button id="l" class="active">一般學習｜選答即時解析</button><button id="f">正式測驗｜完成後公布結果</button></div><div id="list"></div><button id="submit" style="display:none">提交正式測驗</button><div id="res" class="result"></div></main>
+<script>
+const D=[{"q":"王先生因肺炎住院第七天，病況已有改善，但仍建議完成住院療程。當護理師發現王先生正在整理行李，並表示「我真的不能再住了。」此時醫療團隊最適當的第一步為何？","o":["立即要求病人簽署自動出院文件","告知病人未完成治療，不得出院","先了解病人希望提早出院的真正原因","立即通知家屬要求病人配合住院"],"a":2,"e":"正確答案為（C）。先理解病人真正的困難與需求，才有後續評估風險及規劃照護的基礎。"},{"q":"王先生表示，希望提早離院，是因為太太身體不好、孩子在外地工作，看護費又負擔不起。這最能說明下列哪一項觀念？","o":["病人拒絕接受任何醫療","病人的決定可能受到生活處境影響","病人不了解自己的病情","病人沒有決策能力"],"a":1,"e":"正確答案為（B）。提早離院可能源於照顧責任與經濟壓力，不等於拒絕醫療或沒有決策能力。"},{"q":"了解王先生的困境後，下列哪一項最符合共同規劃照護方案的精神？","o":["堅持完成住院療程，不再討論其他可能","只要病人要求，就立即安排出院","依病情、生活需求及可用資源，共同討論最適合的照護方式","完成自動出院文件即可結束醫療責任"],"a":2,"e":"正確答案為（C）。共同規劃不是二選一，而是依病情、生活需要與資源尋找適合的安排。"},{"q":"下列哪一項可能是王先生提早離院後，可以評估的後續照護安排？","o":["出院準備服務","回居住地接續治療","符合條件時評估居家急性照護（Hospital at Home）","以上皆是"],"a":3,"e":"正確答案為（D）。三項都可能是選擇，但需依病情、家庭支持及可用資源個別評估。"},{"q":"本課程最重要的核心觀念為何？","o":["病人提出提早出院時，應優先完成行政程序","提早出院就是拒絕治療","先理解病人的生活處境，再共同尋找兼顧病人需求與醫療安全的照護方案","只要病人仍有疾病，就不應考慮出院"],"a":2,"e":"正確答案為（C）。先理解生活困境，再評估病情與風險，才能共同規劃安全且可持續的照護。"}];
+let formal=false;const list=document.getElementById('list'),l=document.getElementById('l'),f=document.getElementById('f'),s=document.getElementById('submit'),r=document.getElementById('res');
+function render(){list.innerHTML=D.map((x,i)=>`<section class="q" id="q${i}"><h2>第${i+1}題　${x.q}</h2>${x.o.map((o,j)=>`<label class="opt"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="exp">${x.e}</div><div class="fb"></div></section>`).join('')}render();
+function clearAttempt(){document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));document.querySelectorAll('.exp').forEach(e=>e.style.display='none');document.querySelectorAll('.fb').forEach(e=>e.textContent='');r.style.display='none'}
+l.onclick=()=>{formal=false;l.classList.add('active');f.classList.remove('active');s.style.display='none';clearAttempt()};f.onclick=()=>{formal=true;f.classList.add('active');l.classList.remove('active');s.style.display='inline-block';clearAttempt()};
+list.onchange=e=>{if(!e.target.matches('input')||formal)return;const i=+e.target.name.slice(1),ok=+e.target.value===D[i].a,q=e.target.closest('.q');q.querySelector('.exp').style.display='block';q.querySelector('.fb').textContent=ok?'回答正確':'回答錯誤，請參考解析後再試一次。';q.querySelector('.fb').style.color=ok?'#287d58':'#b33'};
+s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));D.forEach((x,i)=>{const e=document.querySelector(`input[name=q${i}]:checked`);if(!e)miss.push(i+1);else if(+e.value===x.a)score++;else document.getElementById('q'+i).classList.add('wrong')});r.style.display='block';r.innerHTML=miss.length?`<h2>尚未完成</h2><p>請先回答第 ${miss.join('、')} 題。</p>`:`<h2>測驗結果：${score}/${D.length} 題</h2><p>${score===D.length?'恭喜，已通過正式測驗。':'尚未通過；紅框題目為答錯題目，請重新作答。'}</p>`};
+</script>
+</body>
+</html>

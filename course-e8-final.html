@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+.media iframe{width:100%;height:100%;border:0;border-radius:12px}</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E8｜病人與家屬意見不同，該聽誰的？</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .course-hero{padding:42px 5vw 52px;background:#eef7f6;border-bottom:1px solid #d8e5e5}.course-hero h1{margin:12px 0 14px;color:#162b46;font-size:clamp(2rem,4vw,3.5rem)}.course-hero p{color:#49637e;font-size:1.08rem}.course-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(260px,1fr);gap:24px;max-width:1180px;margin:34px auto;padding:0 24px}.card{background:#fff;border:1px solid #d8e3eb;border-radius:14px;padding:24px;margin-bottom:24px}.media{background:#192e49;border-radius:12px;aspect-ratio:16/9}.media video{width:100%;height:100%;border-radius:12px;object-fit:contain}.side .button{display:block;width:100%;box-sizing:border-box;margin:12px 0;padding:13px;text-align:center;border-radius:8px;text-decoration:none;font-weight:700;background:#57928c;color:#fff}.side .button.secondary{background:#edf5f4;color:#286d69}.meta p{margin:12px 0;color:#304b68}.back{display:inline-block;padding:18px 5vw;color:#286d69;font-weight:700;text-decoration:none}@media(max-width:780px){.course-layout{grid-template-columns:1fr;padding:0 16px}}
+  </style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+  <a class="back" href="series.html#series-e">← 返回第二系列</a>
+  <header class="course-hero">
+    <div class="eyebrow">E8｜第二系列・臨床倫理情境案例</div>
+    <h1>病人與家屬意見不同，該聽誰的？</h1>
+    <p>當病人與家屬意見不同時，醫療團隊該如何回應？</p>
+  </header>
+  <main class="course-layout">
+    <section>
+      <article class="card"><div class="media" id="video"><div id="youtube-player" aria-label="E8 課程影片"></div></div></article>
+      <article class="card"><h2>課程簡介</h2><p>透過病人希望出院、家屬希望繼續住院的情境，思考醫療團隊如何先確認病人的決策能力，理解雙方真正的理由，再共同尋找兼顧病人意願與醫療安全的方案。</p></article>
+      <article class="card"><h2>學習重點</h2><ul><li>掌握病人與家屬意見不同時，醫療團隊應先做什麼。</li><li>辨識評估病人決策能力的基本重點。</li><li>透過溝通與替代方案，兼顧病人自主、家屬擔憂與醫療安全。</li></ul></article>
+    </section>
+    <aside>
+      <div class="card side"><h2>本集教材</h2><a class="button" href="#video" id="play-course-video">開始觀看影片</a><a class="button secondary" href="assets/series2/E8/E8-病人與家屬意見不同該聽誰的_一頁式資訊圖_橫式16x9_新架構_v3.png" target="_blank">瀏覽一頁式資訊圖</a><a class="button" href="quiz-e8.html">進入課後測驗</a></div>
+      <div class="card meta"><h2>課程資訊</h2><p>所屬系列：第二系列</p><p>教育類別：病人權利</p><p>本集能力焦點：促進知情參與與共同決策</p><p>建議學習時間：約 5～6 分鐘</p><p>課後測驗：5 題單選題</p></div>
+    </aside>
+  </main>
+
+<script src="assets/platform-analytics.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+PlatformAnalytics.track('course_view',{course_id:'E8',series_id:'series_2',once_key:'course_view:E8'});
+let coursePlayer;
+function onYouTubeIframeAPIReady(){
+  coursePlayer=new YT.Player('youtube-player',{
+    videoId:'DLhv8HIrEXM',
+    playerVars:{rel:0,playsinline:1},
+    events:{onStateChange:(event)=>{
+      if(event.data===YT.PlayerState.PLAYING){
+        PlatformAnalytics.track('video_start',{course_id:'E8',series_id:'series_2',once_key:'video_start:E8'});
+      }
+    }}
+  });
+}
+document.getElementById('play-course-video')?.addEventListener('click',(event)=>{
+  event.preventDefault();
+  document.getElementById('video').scrollIntoView({behavior:'smooth',block:'center'});
+  if(coursePlayer&&coursePlayer.playVideo)coursePlayer.playVideo();
+});
+document.querySelector('a[href*="series2/"]')?.addEventListener('click',()=>{
+  PlatformAnalytics.track('infographic_open',{course_id:'E8',series_id:'series_2',once_key:'infographic_open:E8'});
+});
+</script>
+</body>
+</html>

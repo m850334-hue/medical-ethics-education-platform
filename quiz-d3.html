@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D3 測驗</title>
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<style>body{font-family:Arial,"Microsoft JhengHei";margin:0;background:#f4f8f8;color:#162b46}.hero{padding:30px 7%;background:#eef7f6}.wrap{max-width:900px;margin:25px auto}.mode button,#submit{padding:11px 18px;margin-right:8px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold}.active,#submit{background:#4f8e88!important;color:white!important}.q{background:white;border:1px solid #d7e2e8;border-radius:12px;padding:18px;margin:14px 0}.q.wrong{border:3px solid #c94b4b;background:#fff8f8}.opt{display:block;padding:8px}.exp{display:none;background:#eff8f5;border-left:4px solid #4f8e88;padding:10px;margin-top:10px}.fb{margin-top:8px;font-weight:bold}.result{display:none;background:white;border:2px solid #4f8e88;border-radius:10px;padding:18px;margin-top:20px}</style>
+<style>@media(max-width:700px){.hero{padding:24px 20px}.wrap{margin:18px 14px}.mode{display:grid;gap:8px}.mode button,#submit{width:100%;margin:0}.q{padding:16px}.q h2{font-size:1.15rem;line-height:1.5}.opt{padding:11px 6px}}</style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+<div class="hero"><div>D3｜基礎微課程</div><h1>拍照、錄影與病人隱私｜課後測驗</h1><p>一般學習選答即時解析；正式測驗全部作答後提交。</p><a href="course-d3-final.html" style="display:inline-block;margin-top:14px;padding:10px 18px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold;text-decoration:none">← 返回 D3 課程</a></div>
+<main class="wrap"><div class="mode"><button id="l" class="active">一般學習｜選答即時解析</button><button id="f">正式測驗｜完成後公布結果</button></div><div id="list"></div><button id="submit" style="display:none">提交正式測驗</button><div id="res" class="result"></div></main>
+<script>
+const D=[{"q":"關於臨床拍照或錄影，下列何者正確？","o":["只要是工作用途就可以自由拍攝","只要不外傳就不需告知","可能涉及病人隱私與資料安全，應謹慎處理；醫病雙方錄音錄影原則上應先徵得對方同意","只有臉部照片才有隱私風險"],"a":2,"e":"正確答案為（C）。臨床拍照或錄影涉及隱私與資料安全，原則上應先取得對方同意。"},{"q":"拍攝傷口追蹤照片前，較適合先確認什麼？","o":["拍攝目的與必要性、是否有替代方式、拍攝範圍是否可縮小","病房背景是否漂亮","是否能順便拍到鄰床","是否方便上傳到私人雲端"],"a":0,"e":"正確答案為（A）。拍攝前應確認目的、必要性、替代方式，以及能否縮小拍攝範圍。"},{"q":"拍攝傷口時，下列何者較適當？","o":["連同病歷號一起拍清楚，方便辨識","把整個病房背景都拍進去","只拍必要部位，避免拍到臉部、姓名、床號與病歷資訊","同時拍到鄰床病人比較方便"],"a":2,"e":"正確答案為（C）。只拍必要部位，並避開臉部、姓名、床號與病歷資料，可降低辨識風險。"},{"q":"關於影像的保存與使用，下列何者較「不」適當？","o":["依院內規範保存","避免超出原本目的的使用","注意離職或換機時的資料清除","任意存在私人手機並轉傳到非必要群組"],"a":3,"e":"正確答案為（D）。影像應依院內規範保存，不可留在私人手機或轉傳至非必要群組。"},{"q":"關於院內錄音、錄影的規範，下列何者較正確？","o":["只要是醫療人員，就可在任何區域自由錄影","手術室、加護病房、急診、產房等敏感場域更需謹慎，並應遵守院內規範及絕對禁止錄影區域之規定","只要不拍到臉就沒有任何限制","病人是否同意不影響錄影"],"a":1,"e":"正確答案為（B）。手術室、加護病房等敏感場域須遵守院內規範及禁止錄影區域限制。"}];
+let formal=false;const list=document.getElementById('list'),l=document.getElementById('l'),f=document.getElementById('f'),s=document.getElementById('submit'),r=document.getElementById('res');
+function render(){list.innerHTML=D.map((x,i)=>`<section class="q" id="q${i}"><h2>第${i+1}題　${x.q}</h2>${x.o.map((o,j)=>`<label class="opt"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="exp">${x.e}</div><div class="fb"></div></section>`).join('')}render();
+function clearAttempt(){document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));document.querySelectorAll('.exp').forEach(e=>e.style.display='none');document.querySelectorAll('.fb').forEach(e=>e.textContent='');r.style.display='none'}
+l.onclick=()=>{formal=false;l.classList.add('active');f.classList.remove('active');s.style.display='none';clearAttempt()};f.onclick=()=>{formal=true;f.classList.add('active');l.classList.remove('active');s.style.display='inline-block';clearAttempt()};
+list.onchange=e=>{if(!e.target.matches('input')||formal)return;const i=+e.target.name.slice(1),ok=+e.target.value===D[i].a,q=e.target.closest('.q');q.querySelector('.exp').style.display='block';q.querySelector('.fb').textContent=ok?'回答正確':'回答錯誤，請參考解析後再試一次。';q.querySelector('.fb').style.color=ok?'#287d58':'#b33'};
+s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));D.forEach((x,i)=>{const e=document.querySelector(`input[name=q${i}]:checked`);if(!e)miss.push(i+1);else if(+e.value===x.a)score++;else document.getElementById('q'+i).classList.add('wrong')});r.style.display='block';r.innerHTML=miss.length?`<h2>尚未完成</h2><p>請先回答第 ${miss.join('、')} 題。</p>`:`<h2>測驗結果：${score}/${D.length} 題</h2><p>${score===D.length?'恭喜，已通過正式測驗。':'尚未通過；紅框題目為答錯題目，請重新作答。'}</p>`};
+</script>
+</body>
+</html>

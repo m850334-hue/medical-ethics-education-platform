@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C1 測驗</title>
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<style>body{font-family:Arial,"Microsoft JhengHei";margin:0;background:#f4f8f8;color:#162b46}.hero{padding:30px 7%;background:#eef7f6}.wrap{max-width:900px;margin:25px auto}.mode button,#submit{padding:11px 18px;margin-right:8px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold}.active,#submit{background:#4f8e88!important;color:white!important}.q{background:white;border:1px solid #d7e2e8;border-radius:12px;padding:18px;margin:14px 0}.q.wrong{border:3px solid #c94b4b;background:#fff8f8}.opt{display:block;padding:8px}.exp{display:none;background:#eff8f5;border-left:4px solid #4f8e88;padding:10px;margin-top:10px}.fb{margin-top:8px;font-weight:bold}.result{display:none;background:white;border:2px solid #4f8e88;border-radius:10px;padding:18px;margin-top:20px}</style>
+<style>@media(max-width:700px){.hero{padding:24px 20px}.wrap{margin:18px 14px}.mode{display:grid;gap:8px}.mode button,#submit{width:100%;margin:0}.q{padding:16px}.q h2{font-size:1.15rem;line-height:1.5}.opt{padding:11px 6px}}</style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+<div class="hero"><div>C1｜基礎微課程</div><h1>病人拒絕治療時，醫療團隊可以怎麼做？｜課後測驗</h1><p>一般學習選答即時解析；正式測驗全部作答後提交。</p><a href="course-c1-final.html" style="display:inline-block;margin-top:14px;padding:10px 18px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold;text-decoration:none">← 返回 C1 課程</a></div>
+<main class="wrap"><div class="mode"><button id="l" class="active">一般學習｜選答即時解析</button><button id="f">正式測驗｜完成後公布結果</button></div><div id="list"></div><button id="submit" style="display:none">提交正式測驗</button><div id="res" class="result"></div></main>
+<script>
+const D=[{"q":"病人拒絕治療時，醫療團隊較適合先做什麼？","o":["直接認定病人不配合","只請病人簽名即可","立即停止所有照顧","確認病人是否理解資訊、風險與後果，並了解拒絕的原因"],"a":3,"e":"正確答案為（D）。拒絕治療後仍應確認決定能力、理解程度與拒絕原因，不能只以簽名結案。"},{"q":"一位意識清楚、已表示理解風險的68歲病人拒絕建議的住院。下列何者是此時最適當的下一步？","o":["請病人簽自願離院同意書後即結束處置","確認病人決定能力，了解拒絕背後原因與可接受的替代方案","聯絡家屬請其說服病人接受","因病人有風險，依職權安排住院"],"a":1,"e":"正確答案為（B）。理解風險且有決定能力的病人，可拒絕建議；團隊仍須討論替代方案。"},{"q":"評估病人「是否具決定能力」時，下列何者較相關？","o":["病人是否能理解相關資訊、衡量選項並表達相對穩定的選擇","病房是否為單人房","是否有很多家屬在場","病人是否使用手機"],"a":0,"e":"正確答案為（A）。決定能力是針對特定決策評估理解、權衡與表達能力，不等同於診斷名稱。"},{"q":"病人充分理解後仍拒絕治療，較適當的作法是？","o":["完全不再照顧病人","要求家屬強迫病人接受","不需任何紀錄","提供可接受的替代方案、安全建議與後續追蹤，並完整紀錄"],"a":3,"e":"正確答案為（D）。尊重拒絕不等於停止照護，仍應提供替代方案、安全建議、後續追蹤並完整紀錄。"},{"q":"下列哪一種情況，「本集尊重病人拒絕」的一般原則可能不適用，需另依法律規範處理？","o":["意識清楚、理解風險的成年病人拒絕例行檢查","經充分說明後拒絕某項藥物的門診病人","罹患法定傳染病、依法須強制處置的病人","理解後選擇保守治療的慢性病人"],"a":2,"e":"正確答案為（C）。法定傳染病等依法須強制處置的情況，不能直接套用一般拒絕原則。"}];
+let formal=false;const list=document.getElementById('list'),l=document.getElementById('l'),f=document.getElementById('f'),s=document.getElementById('submit'),r=document.getElementById('res');
+function render(){list.innerHTML=D.map((x,i)=>`<section class="q" id="q${i}"><h2>第${i+1}題　${x.q}</h2>${x.o.map((o,j)=>`<label class="opt"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('')}<div class="exp">${x.e}</div><div class="fb"></div></section>`).join('')}render();
+function clearAttempt(){document.querySelectorAll('input[type="radio"]').forEach(x=>x.checked=false);document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));document.querySelectorAll('.exp').forEach(e=>e.style.display='none');document.querySelectorAll('.fb').forEach(e=>e.textContent='');r.style.display='none'}
+l.onclick=()=>{formal=false;l.classList.add('active');f.classList.remove('active');s.style.display='none';clearAttempt()};f.onclick=()=>{formal=true;f.classList.add('active');l.classList.remove('active');s.style.display='inline-block';clearAttempt()};
+list.onchange=e=>{if(!e.target.matches('input')||formal)return;const i=+e.target.name.slice(1),ok=+e.target.value===D[i].a,q=e.target.closest('.q');q.querySelector('.exp').style.display='block';q.querySelector('.fb').textContent=ok?'回答正確':'回答錯誤，請參考解析後再試一次。';q.querySelector('.fb').style.color=ok?'#287d58':'#b33'};
+s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));D.forEach((x,i)=>{const e=document.querySelector(`input[name=q${i}]:checked`);if(!e)miss.push(i+1);else if(+e.value===x.a)score++;else document.getElementById('q'+i).classList.add('wrong')});r.style.display='block';r.innerHTML=miss.length?`<h2>尚未完成</h2><p>請先回答第 ${miss.join('、')} 題。</p>`:`<h2>測驗結果：${score}/${D.length} 題</h2><p>${score===D.length?'恭喜，已通過正式測驗。':'尚未通過；紅框題目為答錯題目，請重新作答。'}</p>`};
+</script>
+</body>
+</html>

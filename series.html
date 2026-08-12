@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<style data-series-compact-style>
+.series-page-hero{padding:28px 6vw 26px}.series-page-hero h1{font-size:clamp(2.15rem,3.4vw,3.15rem);margin:5px 0 8px}.series-page-hero .eyebrow{margin:0}.series-page-hero .lead{margin:0;font-size:1.05rem}body>main{padding-top:30px}@media(max-width:600px){.series-page-hero{padding:24px 20px 22px}.series-page-hero h1{font-size:2.05rem}body>main{padding-top:24px}}
+</style>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>依課程系列瀏覽｜醫學倫理微課程教育平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+  
+  <header class="hero compact series-page-hero"><p class="eyebrow">SERIES</p><h1>依課程系列瀏覽</h1><p class="lead">選擇課程系列，進入適合自己的學習內容。</p></header>
+  <main>
+    <section class="section" id="series-a">
+      <div class="section-heading"><div><p class="eyebrow">01｜KNOWING ETHICS</p><h2>第一系列｜基礎微課程</h2></div><span class="series-note">A1–D4｜16 集</span></div>
+      <p class="section-lead">適合第一次接觸醫學倫理，建立共同語言與基本問題辨識能力。</p>
+      <div class="subsection" id="series-a-foundation"><h3>建立共同語言｜A1–B4</h3><p class="section-lead">從醫學倫理、病人權利與基本原則開始，建立共同基礎。</p><div class="course-grid" id="first-foundation"></div></div>
+      <div class="subsection" id="series-a-clinical"><h3>辨識臨床問題｜C1–D4</h3><p class="section-lead">把基礎概念帶入臨床情境，練習辨識需要進一步整理的問題。</p><div class="course-grid" id="first-clinical"></div></div>
+    </section>
+    <section class="section" id="series-e"><div class="section-heading"><div><p class="eyebrow">02｜PRACTICING ETHICS</p><h2>第二系列｜臨床倫理情境案例微課程</h2></div><span class="series-note">E1–E18｜18 集</span></div><p class="section-lead">在日常臨床情境中練習看見、理解、溝通、回應與合作。</p><div class="course-grid" id="second-courses"></div></section>
+  </main>
+  <script>
+  const foundation=[['A1','醫學倫理不是只有法律問題'],['A2','醫學倫理四大原則'],['A3','病人最佳利益與代理決定'],['A4','遇到倫理困境時臨床團隊如何整理問題'],['B1','病人權利是什麼'],['B2','尊重病人自主與知情同意'],['B3','病人隱私、保密與資訊揭露'],['B4','身體隱私與照護尊嚴']];
+  const clinical=[['C1','病人拒絕治療時醫療團隊可以怎麼做'],['C2','當病人、家屬與醫療團隊意見不一致時'],['C3','治療效益有限時如何與家屬討論照護目標'],['C4','醫療團隊內部意見不同時如何進行倫理討論'],['D1','家屬要求不要告訴病人病情怎麼辦'],['D2','家屬來電詢問病情可以直接告知嗎'],['D3','拍照、錄影與病人隱私'],['D4','教學簡報使用病人照片或案例要注意什麼']];
+  const second=[['E1','讓病人真正參與醫療決策'],['E2','知情同意，不只是簽名'],['E3','病人說：「都交給醫師決定。」'],['E4','當家屬希望暫時不要告知病人'],['E5','病人拒絕侵入性處置，怎麼回應？'],['E6','病房走廊談病情，可以嗎？'],['E7','電話詢問病情，可以直接說嗎？'],['E8','病人與家屬意見不同，該聽誰的？'],['E9','病人拒絕住院，怎麼辦？'],['E10','病人說：「我真的不能再住了。」'],['E11','家屬彼此意見不同，醫療團隊怎麼辦？'],['E12','忙碌時，可以省略說明嗎？'],['E13','用通訊軟體傳送病人資料可以嗎？'],['E14','醫療團隊意見不同，病人該聽誰的？'],['E15','什麼時候需要倫理諮詢？'],['E16','遇到倫理困境，第一步是什麼？'],['E17','每個方案都有風險，該怎麼選？'],['E18','倫理決定如何落實在照護中？']];
+  const pageByCode={
+    A1:'course-a1-final-v2.html', A2:'course-a2-final.html', A3:'course-a3-final.html', A4:'course-a4-final.html',
+    B1:'course-b1-final.html', B2:'course-b2-final.html', B3:'course-b3-final.html', B4:'course-b4-final.html',
+    C1:'course-c1-final.html', C2:'course-c2-final.html', C3:'course-c3-final.html', C4:'course-c4-final.html',
+    D1:'course-d1-final.html', D2:'course-d2-final.html', D3:'course-d3-final.html', D4:'course-d4-final.html',
+    E1:'course-e1-final.html', E2:'course-e2-final.html', E3:'course-e3-final.html', E4:'course-e4-final.html', E5:'course-e5-final.html', E6:'course-e6-final.html', E7:'course-e7-final.html', E8:'course-e8-final.html', E9:'course-e9-final.html', E10:'course-e10-final.html', E11:'course-e11-final.html', E12:'course-e12-final.html', E13:'course-e13-final.html', E14:'course-e14-final.html', E15:'course-e15-final.html', E16:'course-e16-final.html', E17:'course-e17-final.html', E18:'course-e18-final.html'
+  };
+  function render(id,items){document.getElementById(id).innerHTML=items.map(([code,title])=>{
+    const href=pageByCode[code];
+    return href
+      ? `<a class="course-card" href="${href}"><span>${code}</span><strong>${title}</strong><small>影片｜資訊圖｜測驗</small></a>`
+      : `<div class="course-card pending"><span>${code}</span><strong>${title}</strong><small>內容接入中</small></div>`;
+  }).join('')}
+  render('first-foundation',foundation);render('first-clinical',clinical);render('second-courses',second);
+  </script>
+</body>
+</html>

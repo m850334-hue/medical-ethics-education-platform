@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant">
+<style data-site-identity-style>
+.site-identity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 5vw;background:#fff;border-bottom:1px solid #dbe5ec;font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif}.site-identity-brand{display:flex;flex-direction:column;gap:2px;line-height:1.35}.site-identity-owner{color:#286d69;font-size:1.12rem;font-weight:800}.site-identity-platform{color:#17324d;font-size:1.35rem;font-weight:800}.site-identity-home{flex:0 0 auto;color:#286d69;font-size:1rem;font-weight:700;text-decoration:none}.site-identity-home:hover{text-decoration:underline}@media(max-width:600px){.site-identity{align-items:flex-start;padding:13px 20px;gap:12px}.site-identity-owner{font-size:1rem}.site-identity-platform{font-size:1.15rem}.site-identity-home{font-size:.92rem;padding-top:3px}}
+</style>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>課程地圖｜醫學倫理微課程教育平台</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--ink:#162b46;--muted:#526a82;--teal:#347c78;--teal-dark:#245f5c;--line:#d8e3eb;--soft:#eef7f6;--page:#f4f7f9;--white:#fff;--blue:#486b91;--warm:#a76631;--warm-dark:#76451f;--warm-soft:#fbf2e8;--warm-line:#dfc5aa}
+    *{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font-family:Arial,"Microsoft JhengHei",sans-serif}.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:#fff;border-bottom:1px solid var(--line)}.brand{font-weight:800;color:var(--ink);text-decoration:none}.back{color:var(--teal-dark);font-weight:700;text-decoration:none}.hero{padding:46px 5vw 42px;background:#fff;border-bottom:1px solid var(--line)}.hero-inner,.page{max-width:1240px;margin:auto}.eyebrow{color:var(--teal);font-weight:900;letter-spacing:.12em}.hero h1{font-size:clamp(2.2rem,4vw,3.5rem);margin:10px 0 14px}.lead{max-width:820px;color:var(--muted);font-size:1.08rem;line-height:1.8}.page{padding:28px 24px 70px}.summary{display:grid;grid-template-columns:1.5fr repeat(3,minmax(120px,.5fr));gap:14px;margin-bottom:22px}.summary-main,.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.summary-main{background:linear-gradient(135deg,#fff,#eef7f6)}.summary-main strong{display:block;font-size:1.22rem;margin-bottom:8px}.summary-main span,.stat span{color:var(--muted);line-height:1.6}.stat{text-align:center}.stat strong{display:block;color:var(--teal);font-size:2rem;margin-bottom:4px}.filters{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}.filter{border:1px solid #b9d2d3;border-radius:999px;background:#fff;color:var(--teal-dark);padding:10px 15px;font-weight:800;cursor:pointer}.filter[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}.filter:focus-visible,.node:focus-visible{outline:3px solid #8dc7c2;outline-offset:2px}.stage{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:18px}.stage-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:22px}.stage-number{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:var(--teal);color:#fff;font-size:1.4rem;font-weight:900;flex:0 0 auto}.stage-title{flex:1}.stage-title h2{margin:0 0 8px;font-size:clamp(1.45rem,2.5vw,2rem)}.stage-title p{margin:0;color:var(--muted);line-height:1.7}.series-count{color:var(--teal-dark);font-weight:800;background:var(--soft);border-radius:999px;padding:9px 13px;white-space:nowrap}.group-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.group{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fbfdfd}.group-head{display:flex;align-items:center;gap:10px;margin-bottom:13px}.group-code{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--soft);color:var(--teal-dark);font-weight:900}.group h3{font-size:1rem;margin:0}.nodes{display:grid;gap:9px}.node{display:block;border:1px solid var(--line);border-radius:10px;background:#fff;padding:11px 12px;color:var(--ink);text-decoration:none;transition:.15s}.node:hover{border-color:var(--teal);transform:translateY(-1px)}.node-code{display:block;color:var(--teal);font-size:.82rem;font-weight:900;margin-bottom:5px}.node-title{display:block;font-size:.92rem;font-weight:700;line-height:1.45}.node[hidden],.group[hidden],.path[hidden]{display:none}.bridge{position:relative;margin:22px auto;width:min(720px,90%);padding:15px 50px;text-align:center;color:var(--teal-dark);font-weight:800}.bridge::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #a8c8c7}.bridge span{position:relative;background:var(--page);padding:0 15px}.bridge::after{content:"↓";position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);background:var(--page);padding:0 8px;font-size:1.3rem}.path-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.path{border:1px solid var(--line);border-radius:15px;padding:18px;background:#fbfdfd}.path h3{font-size:1.05rem;margin:0 0 7px}.path>p{color:var(--muted);font-size:.92rem;line-height:1.55;margin:0 0 14px}.path .nodes{grid-template-columns:repeat(2,minmax(0,1fr))}.advanced{margin-top:18px;border:1px solid #b7d3d1;border-radius:15px;background:var(--soft);padding:20px}.advanced h3{margin:0 0 6px}.advanced p{color:var(--muted);margin:0 0 16px}.advanced-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}.advanced-flow .node{position:relative}.advanced-flow .node:not(:last-child)::after{content:"→";position:absolute;right:-22px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:1.25rem;font-weight:900}.empty{display:none;text-align:center;color:var(--muted);padding:28px}.empty.show{display:block}.legend{display:flex;flex-wrap:wrap;gap:15px;margin-top:20px;color:var(--muted);font-size:.9rem}.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--teal);margin-right:7px}.legend span:last-child::before{background:var(--warm)}
+    #stage-one{border-top:5px solid var(--teal)}#stage-two{border-top:5px solid var(--warm);background:#fffdfa}#stage-two .stage-number{background:var(--warm)}#stage-two .eyebrow,#stage-two .node-code{color:var(--warm-dark)}#stage-two .series-count{color:var(--warm-dark);background:var(--warm-soft)}#stage-two .path{border-color:var(--warm-line);background:var(--warm-soft)}#stage-two .advanced{border-color:var(--warm-line);background:#fff8f0}.node[data-series="series1"]{border-left:4px solid var(--teal);background:#fbfefd}.node[data-series="series2"]{border-color:var(--warm-line);border-left:4px solid var(--warm);background:#fffaf4}.node[data-series="series2"]:hover{border-color:var(--warm);box-shadow:0 5px 14px rgba(118,69,31,.1)}.node[data-series="series1"]:hover{border-color:var(--teal);box-shadow:0 5px 14px rgba(36,95,92,.1)}.advanced-flow .node:not(:last-child)::after{color:var(--warm)}.filter[data-filter="series2"][aria-pressed="true"],.filter[data-filter="E"][aria-pressed="true"]{background:var(--warm);border-color:var(--warm);color:#fff}.legend span:last-child::before{background:var(--warm)}
+    @media(max-width:980px){.summary{grid-template-columns:repeat(3,1fr)}.summary-main{grid-column:1/-1}.group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.advanced-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.advanced-flow .node::after{display:none}}
+    @media(max-width:680px){.page{padding-inline:15px}.topbar{padding-inline:18px}.hero{padding-inline:20px}.summary{grid-template-columns:1fr}.summary-main{grid-column:auto}.stage{padding:19px}.stage-head{flex-wrap:wrap}.series-count{margin-left:58px}.group-grid,.path-grid{grid-template-columns:1fr}.path .nodes,.advanced-flow{grid-template-columns:1fr}.bridge{padding-inline:10px;width:100%}}
+  </style>
+</head>
+<body>
+<header class="site-identity">
+  <div class="site-identity-brand">
+    <span class="site-identity-owner">奇美醫院醫學倫理委員會</span>
+    <span class="site-identity-platform">醫學倫理微課程教育平台</span>
+  </div>
+  <a class="site-identity-home" href="index.html">返回首頁</a>
+</header>
+  
+  <header class="hero"><div class="hero-inner"><div class="eyebrow">COURSE MAP</div><h1>課程地圖</h1><p class="lead">先用第一系列建立共同倫理基礎，再依臨床需求進入第二系列情境應用。你可以依系列、課程群組或學習階段快速找到適合的課程。</p></div></header>
+  <main class="page">
+    <section class="summary" aria-label="課程地圖總覽">
+      <div class="summary-main"><strong>從理解概念，到落實臨床照護</strong><span>第一系列建立共同語言；第二系列透過具體案例練習判斷、溝通、合作與行動。</span></div>
+      <div class="stat"><strong>2</strong><span>個學習系列</span></div><div class="stat"><strong>34</strong><span>門微課程</span></div><div class="stat"><strong>10</strong><span>個倫理主題</span></div>
+    </section>
+    <nav class="filters" aria-label="課程地圖篩選">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">全部 34 門</button><button class="filter" type="button" data-filter="series1" aria-pressed="false">第一系列</button><button class="filter" type="button" data-filter="series2" aria-pressed="false">第二系列</button><button class="filter" type="button" data-filter="A" aria-pressed="false">A｜倫理基礎</button><button class="filter" type="button" data-filter="B" aria-pressed="false">B｜病人權利</button><button class="filter" type="button" data-filter="C" aria-pressed="false">C｜臨床溝通</button><button class="filter" type="button" data-filter="D" aria-pressed="false">D｜隱私情境</button><button class="filter" type="button" data-filter="E" aria-pressed="false">E｜臨床倫理情境</button>
+    </nav>
+    <section class="stage" id="stage-one">
+      <div class="stage-head"><div class="stage-number">1</div><div class="stage-title"><div class="eyebrow">KNOWING ETHICS</div><h2>第一系列｜建立共同倫理基礎</h2><p>適合第一次接觸醫學倫理者，依 A、B、C、D 四組建立概念與問題辨識能力。</p></div><div class="series-count">A1–D4｜16 門</div></div>
+      <div class="group-grid" id="first-groups"></div>
+    </section>
+    <div class="bridge"><span>建立概念後，依工作情境選擇應用課程</span></div>
+    <section class="stage" id="stage-two">
+      <div class="stage-head"><div class="stage-number">2</div><div class="stage-title"><div class="eyebrow">PRACTICING ETHICS</div><h2>第二系列｜臨床倫理情境案例</h2><p>不必嚴格依 E1–E18 順序；可依目前面對的臨床問題，選擇最相關的情境路徑。</p></div><div class="series-count">E1–E18｜18 門</div></div>
+      <div class="path-grid" id="second-paths"></div>
+      <section class="advanced" id="advanced"><h3>E15–E18｜倫理困境分析與落實</h3><p>若希望完整練習倫理分析，可依下列順序完成四門進階課程。</p><div class="advanced-flow" id="advanced-flow"></div></section>
+    </section>
+    <div class="empty" id="empty">目前沒有符合此篩選條件的課程。</div>
+    <div class="legend"><span>第一系列：建立概念與共同語言</span><span>第二系列：情境演練與進階應用</span></div>
+  </main>
+  <script>
+    const courses={
+      A1:['醫學倫理不是只有法律問題','course-a1-final-v2.html'],A2:['醫學倫理四大原則','course-a2-final.html'],A3:['病人最佳利益與代理決定','course-a3-final.html'],A4:['遇到倫理困境時，臨床團隊如何整理問題？','course-a4-final.html'],
+      B1:['病人權利是什麼？','course-b1-final.html'],B2:['尊重病人自主與知情同意','course-b2-final.html'],B3:['病人隱私、保密與資訊揭露','course-b3-final.html'],B4:['身體隱私與照護尊嚴','course-b4-final.html'],
+      C1:['病人拒絕治療時，醫療團隊可以怎麼做？','course-c1-final.html'],C2:['當病人、家屬與醫療團隊意見不一致時','course-c2-final.html'],C3:['治療效益有限時，如何與家屬討論照護目標？','course-c3-final.html'],C4:['醫療團隊內部意見不同時，如何進行倫理討論？','course-c4-final.html'],
+      D1:['家屬要求不要告訴病人病情，怎麼辦？','course-d1-final.html'],D2:['家屬來電詢問病情，可以直接告知嗎？','course-d2-final.html'],D3:['拍照、錄影與病人隱私','course-d3-final.html'],D4:['教學簡報使用病人照片或案例，要注意什麼？','course-d4-final.html'],
+      E1:['讓病人真正參與醫療決策','course-e1-final.html'],E2:['知情同意，不只是簽名','course-e2-final.html'],E3:['病人說：「都交給醫師決定。」','course-e3-final.html'],E4:['當家屬希望暫時不要告知病人','course-e4-final.html'],E5:['病人拒絕侵入性處置，怎麼回應？','course-e5-final.html'],E6:['病房走廊談病情，可以嗎？','course-e6-final.html'],E7:['電話詢問病情，可以直接說嗎？','course-e7-final.html'],E8:['病人與家屬意見不同，該聽誰的？','course-e8-final.html'],E9:['病人拒絕住院，怎麼辦？','course-e9-final.html'],E10:['病人說：「我真的不能再住了。」','course-e10-final.html'],E11:['家屬彼此意見不同，醫療團隊怎麼辦？','course-e11-final.html'],E12:['忙碌時，可以省略說明嗎？','course-e12-final.html'],E13:['用通訊軟體傳送病人資料，可以嗎？','course-e13-final.html'],E14:['醫療團隊意見不同，病人該聽誰的？','course-e14-final.html'],E15:['什麼時候需要倫理諮詢？','course-e15-final.html'],E16:['遇到倫理困境，第一步是什麼？','course-e16-final.html'],E17:['每個方案都有風險，該怎麼選？','course-e17-final.html'],E18:['倫理決定如何落實在照護中？','course-e18-final.html']
+    };
+    const firstGroups=[['A','倫理基礎',['A1','A2','A3','A4']],['B','病人權利',['B1','B2','B3','B4']],['C','臨床溝通',['C1','C2','C3','C4']],['D','隱私情境',['D1','D2','D3','D4']]];
+    const paths=[
+      ['病人參與與知情決策','從理解與參與，進入拒絕處置的臨床回應。',['E1','E2','E3','E4','E5']],
+      ['隱私、拒絕與離院情境','處理日常資訊風險、拒絕住院與離院需求。',['E6','E7','E8','E9','E10']],
+      ['家屬、團隊與臨床溝通','整合家屬與跨專業意見，維持必要溝通。',['E11','E12','E13','E14']],
+      ['倫理困境分析與落實','從辨識困境、比較方案到共同照護計畫。',['E15','E16','E17','E18']]
+    ];
+    const node=(code)=>`<a class="node" data-code="${code}" data-series="${code.startsWith('E')?'series2':'series1'}" href="${courses[code][1]}"><span class="node-code">${code}</span><span class="node-title">${courses[code][0]}</span></a>`;
+    document.getElementById('first-groups').innerHTML=firstGroups.map(([code,title,list])=>`<section class="group" data-group="${code}"><div class="group-head"><span class="group-code">${code}</span><h3>${title}</h3></div><div class="nodes">${list.map(node).join('')}</div></section>`).join('');
+    document.getElementById('second-paths').innerHTML=paths.map(([title,desc,list])=>`<section class="path"><h3>${title}</h3><p>${desc}</p><div class="nodes">${list.map(node).join('')}</div></section>`).join('');
+    document.getElementById('advanced-flow').innerHTML=['E15','E16','E17','E18'].map(node).join('');
+    function applyFilter(filter){
+      document.querySelectorAll('.node').forEach(item=>{const code=item.dataset.code;item.hidden=!(filter==='all'||filter===item.dataset.series||code.startsWith(filter))});
+      document.querySelectorAll('.group').forEach(item=>item.hidden=![...item.querySelectorAll('.node')].some(node=>!node.hidden));
+      document.querySelectorAll('.path').forEach(item=>item.hidden=![...item.querySelectorAll('.node')].some(node=>!node.hidden));
+      const firstVisible=[...document.querySelectorAll('#first-groups .node')].some(node=>!node.hidden);const secondVisible=[...document.querySelectorAll('#second-paths .node')].some(node=>!node.hidden);
+      document.getElementById('stage-one').hidden=!firstVisible;document.getElementById('stage-two').hidden=!secondVisible;document.querySelector('.bridge').hidden=!(firstVisible&&secondVisible);document.getElementById('advanced').hidden=!['all','series2','E'].includes(filter);document.getElementById('empty').classList.toggle('show',!firstVisible&&!secondVisible)
+    }
+    document.querySelector('.filters').addEventListener('click',event=>{const button=event.target.closest('.filter');if(!button)return;document.querySelectorAll('.filter').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));applyFilter(button.dataset.filter)});
+  </script>
+</body>
+</html>
