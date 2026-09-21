@@ -41,3 +41,6 @@
 .home-topic-grid a:nth-child(6) strong{color:#4f7d58}.home-topic-grid a:nth-child(7) strong{color:#4f7693}
 .home-topic-grid a:nth-child(8) strong{color:#755f88}.home-topic-grid a:nth-child(9) strong{color:#9a674a}
 .home-topic-grid a:nth-child(10) strong{color:#557475}
+/* Keep topic navigation calm and unified; series remain color-coded. */
+.home-topic-grid a,.home-topic-grid a:nth-child(n){background:#eef7f6;border-left:1px solid #d4e8e5;color:#23655f}
+.home-topic-grid a:nth-child(n) strong{color:#23655f}
