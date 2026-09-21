@@ -5,6 +5,7 @@
 </style>
 <style data-series-compact-style>
 .series-page-hero{padding:28px 6vw 26px}.series-page-hero h1{font-size:clamp(2.15rem,3.4vw,3.15rem);margin:5px 0 8px}.series-page-hero .eyebrow{margin:0}.series-page-hero .lead{margin:0;font-size:1.05rem}body>main{padding-top:30px}@media(max-width:600px){.series-page-hero{padding:24px 20px 22px}.series-page-hero h1{font-size:2.05rem}body>main{padding-top:24px}}
+.course-usage-count{display:block;margin-top:8px;color:#286d69;font-size:.9rem;font-weight:700}
 </style>
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -44,10 +45,17 @@
   function render(id,items){document.getElementById(id).innerHTML=items.map(([code,title])=>{
     const href=pageByCode[code];
     return href
-      ? `<a class="course-card" href="${href}"><span>${code}</span><strong>${title}</strong><small>影片｜資訊圖｜測驗</small></a>`
+      ? `<a class="course-card" href="${href}" data-course-code="${code}"><span>${code}</span><strong>${title}</strong><small>影片｜資訊圖｜測驗</small><em class="course-usage-count">全院累計使用：讀取中…</em></a>`
       : `<div class="course-card pending"><span>${code}</span><strong>${title}</strong><small>內容接入中</small></div>`;
   }).join('')}
   render('first-foundation',foundation);render('first-clinical',clinical);render('second-courses',second);
+  fetch('https://medical-ethics-learning-test.pages.dev/api/public-usage').then(response=>response.ok?response.json():Promise.reject()).then(data=>{
+    document.querySelectorAll('[data-course-code]').forEach(card=>{
+      const code=card.dataset.courseCode, total=Number(data.courses?.[code]?.total||0);
+      const label=card.querySelector('.course-usage-count');
+      if(label) label.textContent=`全院累計使用：${total} 次`;
+    });
+  }).catch(()=>document.querySelectorAll('.course-usage-count').forEach(label=>{label.textContent='全院累計使用：暫無資料'}));
   </script>
   <footer class="site-footer">
     <p>奇美醫院醫學倫理委員會</p>
