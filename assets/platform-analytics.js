@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const endpoint = "https://medical-ethics-platform-statistics.m850334.workers.dev/api/events";
+  const endpoint = "https://medical-ethics-learning-test.pages.dev/api/public-usage";
   const source = "public";
   const sessionKeyName = "ethics_platform_session";
   const sentKeyName = "ethics_platform_sent";
@@ -9,6 +9,15 @@
   function uuid() {
     if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
     return Date.now().toString(36) + Math.random().toString(36).slice(2);
+  }
+
+  function eventId() {
+    if (window.crypto && crypto.getRandomValues) {
+      const bytes = new Uint8Array(32);
+      crypto.getRandomValues(bytes);
+      return Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("");
+    }
+    return (uuid().replace(/[^a-f0-9]/gi, "") + Date.now().toString(16)).padEnd(64, "0").slice(0, 64).toLowerCase();
   }
 
   function getSessionKey() {
@@ -47,12 +56,12 @@
       return;
     }
 
-    const body = JSON.stringify(data);
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(endpoint, new Blob([body], { type: "application/json" }));
-    } else {
-      fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true });
-    }
+    const typeMap = { course_view: "open", video_start: "video", infographic_open: "info", practice_start: "practice", quiz_complete: "quiz" };
+    const type = typeMap[eventType];
+    const course = data.course_id;
+    if (!type || !course) return;
+    const body = JSON.stringify({ course, type, eventId: eventId() });
+    fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {});
   }
 
   window.PlatformAnalytics = { track };
