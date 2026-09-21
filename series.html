@@ -45,7 +45,7 @@
   function render(id,items){document.getElementById(id).innerHTML=items.map(([code,title])=>{
     const href=pageByCode[code];
     return href
-      ? `<a class="course-card" href="${href}" data-course-code="${code}"><span>${code}</span><strong>${title}</strong><small>影片｜資訊圖｜測驗</small><em class="course-usage-count">全院累計使用：讀取中…</em></a>`
+      ? `<a class="course-card" href="${href}" data-course-code="${code}"><span>${code}</span><strong>${title}</strong><small>影片｜資訊圖｜測驗</small><em class="course-usage-count">累計使用：讀取中…</em></a>`
       : `<div class="course-card pending"><span>${code}</span><strong>${title}</strong><small>內容接入中</small></div>`;
   }).join('')}
   render('first-foundation',foundation);render('first-clinical',clinical);render('second-courses',second);
@@ -55,7 +55,7 @@
       const label=card.querySelector('.course-usage-count');
       if(label) label.textContent=`全院累計使用：${total} 次`;
     });
-  }).catch(()=>document.querySelectorAll('.course-usage-count').forEach(label=>{label.textContent='全院累計使用：暫無資料'}));
+  }).catch(()=>document.querySelectorAll('.course-usage-count').forEach(label=>{label.textContent='累計使用：暫無資料'}));
   </script>
   <footer class="site-footer">
     <p>奇美醫院醫學倫理委員會</p>
