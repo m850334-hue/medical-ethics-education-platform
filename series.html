@@ -53,7 +53,7 @@
     document.querySelectorAll('[data-course-code]').forEach(card=>{
       const code=card.dataset.courseCode, total=Number(data.courses?.[code]?.total||0);
       const label=card.querySelector('.course-usage-count');
-      if(label) label.textContent=`全院累計使用：${total} 次`;
+      if(label) label.textContent=`累計使用：${total} 次`;
     });
   }).catch(()=>document.querySelectorAll('.course-usage-count').forEach(label=>{label.textContent='累計使用：暫無資料'}));
   </script>
