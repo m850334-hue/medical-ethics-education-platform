@@ -31,10 +31,11 @@ s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.
 </script>
 
 <script>
-(()=>{if(window.PlatformAnalytics)PlatformAnalytics.track('quiz_complete',{course_id:'E1',series_id:'series_2'});})();
+(()=>{if(!window.PlatformAnalytics)return;PlatformAnalytics.track('quiz_complete',{course_id:'E1',series_id:'series_2',mode:'一般學習'});const formal=document.getElementById('f');formal?.addEventListener('click',()=>PlatformAnalytics.track('quiz_complete',{course_id:'E1',series_id:'series_2',mode:'正式測驗'}));})();
 </script>
 </body>
 </html>
+
 
 
 
