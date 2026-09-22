@@ -31,9 +31,10 @@ s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.
 </script>
 
 <script>
-(()=>{const submit=document.getElementById('submit'),result=document.getElementById('res');if(!submit||!result||!window.PlatformAnalytics)return;submit.addEventListener('click',()=>{if(!result.textContent.includes('尚未完成'))PlatformAnalytics.track('quiz_complete',{course_id:'E2',series_id:'series_2'});});})();
+(()=>{if(window.PlatformAnalytics)PlatformAnalytics.track('quiz_complete',{course_id:'E2',series_id:'series_2',once_key:'quiz_open:E2'});})();
 </script>
 </body>
 </html>
+
 
 
