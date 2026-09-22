@@ -35,5 +35,11 @@ l.onclick=()=>{formal=false;l.classList.add('active');f.classList.remove('active
 list.onchange=e=>{if(!e.target.matches('input')||formal)return;const i=+e.target.name.slice(1),ok=+e.target.value===D[i].a,q=e.target.closest('.q');q.querySelector('.exp').style.display='block';q.querySelector('.fb').textContent=ok?'回答正確':'回答錯誤，請參考解析後再試一次。';q.querySelector('.fb').style.color=ok?'#287d58':'#b33'};
 s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.classList.remove('wrong'));D.forEach((x,i)=>{const e=document.querySelector(`input[name=q${i}]:checked`);if(!e)miss.push(i+1);else if(+e.value===x.a)score++;else document.getElementById('q'+i).classList.add('wrong')});r.style.display='block';r.innerHTML=miss.length?`<h2>尚未完成</h2><p>請先回答第 ${miss.join('、')} 題。</p>`:`<h2>測驗結果：${score}/5 題</h2><p>${score===5?'恭喜，已通過正式測驗。':'尚未通過；紅框題目為答錯題目，請重新作答。'}</p>`;if(!miss.length){PlatformAnalytics.track('quiz_submit',{course_id:'A1',series_id:'series_1',score,total:5});if(score===5)PlatformAnalytics.track('quiz_pass',{course_id:'A1',series_id:'series_1',score,total:5})}};
 </script>
+
+<script>
+(()=>{const submit=document.getElementById('submit'),result=document.getElementById('res');if(!submit||!result||!window.PlatformAnalytics)return;submit.addEventListener('click',()=>{if(!result.textContent.includes('尚未完成'))PlatformAnalytics.track('quiz_complete',{course_id:'A1',series_id:'series_1'});});})();
+</script>
 </body>
 </html>
+
+
