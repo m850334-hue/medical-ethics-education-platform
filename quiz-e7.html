@@ -31,10 +31,11 @@ s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.
 </script>
 
 <script>
-(()=>{if(!window.PlatformAnalytics)return;let generalRecorded=false,formalRecorded=false;const list=document.getElementById('list'),general=document.getElementById('l'),formal=document.getElementById('f');const record=mode=>PlatformAnalytics.track('quiz_complete',{course_id:'E7',series_id:'series_2',mode});list?.addEventListener('change',event=>{if(!event.target.matches('input[type=radio]'))return;if(window.formal&&!formalRecorded){formalRecorded=true;record('正式測驗')}else if(!window.formal&&!generalRecorded){generalRecorded=true;record('一般學習')}});general?.addEventListener('click',()=>{generalRecorded=false});formal?.addEventListener('click',()=>{formalRecorded=false});})();
+(()=>{if(!window.PlatformAnalytics)return;let generalRecorded=false,formalRecorded=false;const list=document.getElementById('list'),general=document.getElementById('l'),formal=document.getElementById('f');const record=mode=>PlatformAnalytics.track('quiz_complete',{course_id:'E7',series_id:'series_2',mode});list?.addEventListener('change',event=>{if(!event.target.matches('input[type=radio]'))return;if(formal?.classList.contains('active')&&!formalRecorded){formalRecorded=true;record('正式測驗')}else if(!formal?.classList.contains('active')&&!generalRecorded){generalRecorded=true;record('一般學習')}});general?.addEventListener('click',()=>{generalRecorded=false});formal?.addEventListener('click',()=>{formalRecorded=false});})();
 </script>
 </body>
 </html>
+
 
 
 
