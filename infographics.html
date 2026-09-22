@@ -72,6 +72,7 @@
     <img class="full-image" id="viewer-image" alt="">
   </dialog>
 
+  <script src="assets/platform-analytics.js"></script>
   <script>
     const items=[
       ['A1','醫學倫理不是只有法律問題','assets/infographics/infor-A1.png','series1'],['A2','醫學倫理四大原則','assets/infographics/infor-A2.png','series1'],['A3','病人最佳利益與代理決定','assets/infographics/infor-A3.png','series1'],['A4','遇到倫理困境時，臨床團隊如何整理問題？','assets/infographics/infor-A4.png','series1'],
@@ -106,10 +107,11 @@
       gallery.innerHTML=visible.map(([code,title,path,series])=>`<article class="info-card"><button class="thumb-button" type="button" data-file="${path}" data-title="${code}｜${title}" aria-label="放大閱讀 ${code} ${title}" style="padding:0;border:0;background:transparent"><img class="thumb" loading="lazy" src="${path}" alt="${code} ${title} 一頁式資訊圖縮圖"></button><div class="card-body"><div class="card-top"><div class="code">${code}｜${series==='series1'?'第一系列':'第二系列'}</div><div class="mini-actions"><button class="mini-action primary" type="button" data-file="${path}" data-title="${code}｜${title}" aria-label="放大閱讀 ${code} ${title}">放大閱讀</button></div></div><h2>${title}</h2></div></article>`).join('');
     }
     document.querySelector('.controls').addEventListener('click',event=>{const button=event.target.closest('.filter');if(!button)return;document.querySelectorAll('.filter').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));render(button.dataset.filter)});
-    gallery.addEventListener('click',event=>{const button=event.target.closest('[data-file]');if(!button)return;viewerTitle.textContent=button.dataset.title;viewerImage.src=button.dataset.file;viewerImage.alt=`${button.dataset.title} 一頁式資訊圖`;viewer.showModal()});
+    gallery.addEventListener('click',event=>{const button=event.target.closest('[data-file]');if(!button)return;const code=button.dataset.title.split('｜')[0];const item=items.find(row=>row[0]===code);PlatformAnalytics.track('infographic_open',{course_id:code,series_id:item?.[3]||'unknown'});viewerTitle.textContent=button.dataset.title;viewerImage.src=button.dataset.file;viewerImage.alt=button.dataset.title+' 一頁式資訊圖';viewer.showModal()});
     viewer.querySelector('.close').addEventListener('click',()=>viewer.close());
     viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close()});
     render();
   </script>
 </body>
 </html>
+
