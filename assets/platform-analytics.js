@@ -4,7 +4,7 @@
   const endpoint = "https://medical-ethics-learning-test.pages.dev/api/public-usage";
   const source = "public";
   const sessionKeyName = "ethics_platform_session";
-  const sentKeyName = "ethics_platform_sent";
+  const sentKeyName = "ethics_platform_sent";`n  const pageKey = uuid();
 
   function uuid() {
     if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
@@ -58,9 +58,10 @@
       occurred_at_utc: new Date().toISOString()
     }, details || {});
 
-    const onceKey = data.once_key;
+    const rawOnceKey = data.once_key;
     delete data.once_key;
-    if (onceKey && !rememberOnce(onceKey) && eventType !== "video_start") return;
+    const onceKey = eventType === "video_start" && rawOnceKey ? rawOnceKey + ":" + pageKey : rawOnceKey;
+    if (onceKey && !rememberOnce(onceKey)) return;
 
     window.dispatchEvent(new CustomEvent("platform-analytics", { detail: data }));
     if (!endpoint) {
@@ -133,6 +134,7 @@
   setupYouTubeTracking();
   window.PlatformAnalytics = { track };
 })();
+
 
 
 
