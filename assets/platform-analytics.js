@@ -64,5 +64,18 @@
     fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {});
   }
 
+
+  function courseFromPath() {
+    const match = location.pathname.match(/course-([a-e][0-9]{1,2})-final/i);
+    return match ? match[1].toUpperCase() : null;
+  }
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest && event.target.closest("a");
+    if (!link) return;
+    if (link.matches('a[href*="/assets/infographics/"],a[href*="資訊圖"],a[href*="一頁式"]')) {
+      const course = courseFromPath();
+      if (course) track("infographic_open", { course_id: course });
+    }
+  });
   window.PlatformAnalytics = { track };
 })();
