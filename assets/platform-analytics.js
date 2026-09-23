@@ -115,7 +115,8 @@
       capture.addEventListener("click", () => {
         track("video_start", { course_id: course, once_key: "video_start:" + course });
         capture.remove();
-        document.querySelector(".video-entry-capture")?.remove();`n        iframe.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*");
+        document.querySelector(".video-entry-capture")?.remove();
+                iframe.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*");
       });
       frameBox.append(capture);
     }    iframe.addEventListener("load", listen);
@@ -132,6 +133,7 @@
   setupYouTubeTracking();
   window.PlatformAnalytics = { track };
 })();
+
 
 
 
