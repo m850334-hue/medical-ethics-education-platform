@@ -84,11 +84,19 @@
   document.addEventListener("click", function (event) {
     const link = event.target.closest && event.target.closest("a");
     if (!link) return;
+    const course = courseFromPath();
+    if (course && link.matches('#play, #play-course-video')) {
+      track("video_start", { course_id: course, once_key: "video_start:" + course });
+      const iframe = document.querySelector("#youtube-player");
+      if (iframe?.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*");
+      }
+    }
     if (link.matches('a[href*="/assets/infographics/"],a[href*="資訊圖"],a[href*="一頁式"]')) {
-      const course = courseFromPath();
-      if (course) track("infographic_open", { course_id: course });
+      if (course) track("infographic_open", { course_id: course, once_key: "infographic_open:" + course });
     }
   });
   window.PlatformAnalytics = { track };
 })();
+
 
