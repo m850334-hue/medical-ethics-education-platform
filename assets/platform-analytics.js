@@ -37,6 +37,18 @@
     return true;
   }
 
+  function stableEventId(value) {
+    let a = 2166136261, b = 2654435761, c = 2246822519, d = 3266489917;
+    for (let i = 0; i < value.length; i++) {
+      const code = value.charCodeAt(i);
+      a = Math.imul(a ^ code, 16777619);
+      b = Math.imul(b ^ (code + i), 2246822519);
+      c = Math.imul(c ^ (code * 31), 3266489917);
+      d = Math.imul(d ^ (code * 131), 668265263);
+    }
+    const hex = [a, b, c, d].map(n => (n >>> 0).toString(16).padStart(8, "0")).join("");
+    return (hex + hex).slice(0, 64);
+  }
   function track(eventType, details) {
     const data = Object.assign({
       event_id: uuid(),
@@ -60,7 +72,7 @@
     const type = typeMap[eventType];
     const course = data.course_id;
     if (!type || !course) return;
-    const body = JSON.stringify({ course, type, eventId: eventId() });
+    const body = JSON.stringify({ course, type, eventId: onceKey ? stableEventId(getSessionKey() + ":" + onceKey) : eventId() });
     fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {});
   }
 
@@ -79,3 +91,4 @@
   });
   window.PlatformAnalytics = { track };
 })();
+
