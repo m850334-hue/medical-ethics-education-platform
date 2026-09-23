@@ -104,7 +104,21 @@
       iframe.contentWindow?.postMessage(JSON.stringify({ event: "listening", id: "youtube-player" }), "*");
       iframe.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }), "*");
     };
-    iframe.addEventListener("load", listen);
+    const frameBox = iframe.parentElement;
+    if (frameBox && getComputedStyle(frameBox).position === "static") frameBox.style.position = "relative";
+    if (frameBox && !frameBox.querySelector(".video-entry-capture")) {
+      const capture = document.createElement("button");
+      capture.type = "button";
+      capture.className = "video-entry-capture";
+      capture.setAttribute("aria-label", "開始播放影片");
+      capture.style.cssText = "position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;z-index:2;padding:0";
+      capture.addEventListener("click", () => {
+        track("video_start", { course_id: course, once_key: "video_start:" + course });
+        capture.remove();
+        document.querySelector(".video-entry-capture")?.remove();`n        iframe.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*");
+      });
+      frameBox.append(capture);
+    }    iframe.addEventListener("load", listen);
     listen();
     window.addEventListener("message", event => {
       if (event.source !== iframe.contentWindow) return;
@@ -118,6 +132,7 @@
   setupYouTubeTracking();
   window.PlatformAnalytics = { track };
 })();
+
 
 
 
