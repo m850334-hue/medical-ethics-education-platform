@@ -60,7 +60,7 @@
 
     const onceKey = data.once_key;
     delete data.once_key;
-    if (onceKey && !rememberOnce(onceKey)) return;
+    if (onceKey && !rememberOnce(onceKey) && eventType !== "video_start") return;
 
     window.dispatchEvent(new CustomEvent("platform-analytics", { detail: data }));
     if (!endpoint) {
@@ -98,5 +98,6 @@
   });
   window.PlatformAnalytics = { track };
 })();
+
 
 
