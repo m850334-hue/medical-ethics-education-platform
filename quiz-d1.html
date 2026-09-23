@@ -10,7 +10,7 @@
 <style>body{font-family:Arial,"Microsoft JhengHei";margin:0;background:#f4f8f8;color:#162b46}.hero{padding:30px 7%;background:#eef7f6}.wrap{max-width:900px;margin:25px auto}.mode button,#submit{padding:11px 18px;margin-right:8px;border:1px solid #b9d2d3;border-radius:8px;background:white;color:#176f72;font-weight:bold}.active,#submit{background:#4f8e88!important;color:white!important}.q{background:white;border:1px solid #d7e2e8;border-radius:12px;padding:18px;margin:14px 0}.q.wrong{border:3px solid #c94b4b;background:#fff8f8}.opt{display:block;padding:8px}.exp{display:none;background:#eff8f5;border-left:4px solid #4f8e88;padding:10px;margin-top:10px}.fb{margin-top:8px;font-weight:bold}.result{display:none;background:white;border:2px solid #4f8e88;border-radius:10px;padding:18px;margin-top:20px}</style>
 <style>@media(max-width:700px){.hero{padding:24px 20px}.wrap{margin:18px 14px}.mode{display:grid;gap:8px}.mode button,#submit{width:100%;margin:0}.q{padding:16px}.q h2{font-size:1.15rem;line-height:1.5}.opt{padding:11px 6px}}</style>
 <script src="assets/platform-analytics.js"></script>
-</head>
+<style>.practice-nav{display:flex;align-items:center;gap:10px;margin:14px 0}.practice-nav button{padding:9px 16px;border:1px solid #b9d2d3;border-radius:8px;background:#fff;color:#176f72;font-weight:700}.practice-nav button:disabled{opacity:.45}.practice-progress{color:#286d69;font-weight:700}</style></head>
 <body>
 <header class="site-identity">
   <div class="site-identity-brand">
@@ -34,7 +34,27 @@ s.onclick=()=>{let score=0,miss=[];document.querySelectorAll('.q').forEach(q=>q.
 <script>
 (()=>{if(!window.PlatformAnalytics)return;let generalRecorded=false,formalRecorded=false;const list=document.getElementById('list'),general=document.getElementById('l'),formal=document.getElementById('f');const record=mode=>PlatformAnalytics.track('quiz_complete',{course_id:'D1',series_id:'series_1',mode});list?.addEventListener('change',event=>{if(!event.target.matches('input[type=radio]'))return;if(formal?.classList.contains('active')&&!formalRecorded){formalRecorded=true;record('正式測驗')}else if(!formal?.classList.contains('active')&&!generalRecorded){generalRecorded=true;record('一般學習')}});general?.addEventListener('click',()=>{generalRecorded=false});formal?.addEventListener('click',()=>{formalRecorded=false});})();
 </script>
-</body>
+<script>
+(()=>{
+ const list=document.getElementById('list'), general=document.getElementById('l'), formalBtn=document.getElementById('f');
+ if(!list||!general||!formalBtn)return;
+ const nav=document.createElement('div');nav.className='practice-nav';
+ const prev=document.createElement('button');prev.type='button';prev.textContent='← 上一題';
+ const progress=document.createElement('span');progress.className='practice-progress';
+ const next=document.createElement('button');next.type='button';next.textContent='下一題 →';
+ nav.append(prev,progress,next);list.after(nav);
+ let index=0;
+ const questions=()=>[...list.querySelectorAll('.q')];
+ const isPractice=()=>general.classList.contains('active');
+ function update(){const qs=questions();if(!qs.length)return; if(isPractice()){qs.forEach((q,i)=>q.style.display=i===index?'':'none');progress.textContent=`第 ${index+1}／${qs.length} 題`;prev.disabled=index===0;next.disabled=index===qs.length-1;nav.hidden=false}else{qs.forEach(q=>q.style.display='');nav.hidden=true}}
+ prev.onclick=()=>{if(index>0){index--;update()}};
+ next.onclick=()=>{const q=questions()[index];if(q?.querySelector('.fb')?.textContent){if(index<questions().length-1){index++;update()}}};
+ general.addEventListener('click',()=>setTimeout(()=>{index=0;update()},0));
+ formalBtn.addEventListener('click',()=>setTimeout(update,0));
+ list.addEventListener('change',()=>setTimeout(update,0));
+ update();
+})();
+</script></body>
 </html>
 
 
