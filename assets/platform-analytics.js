@@ -4,7 +4,8 @@
   const endpoint = "https://medical-ethics-learning-test.pages.dev/api/public-usage";
   const source = "public";
   const sessionKeyName = "ethics_platform_session";
-  const sentKeyName = "ethics_platform_sent";`n  const pageKey = uuid();
+  const sentKeyName = "ethics_platform_sent";
+  const pageKey = uuid();
 
   function uuid() {
     if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
@@ -134,6 +135,7 @@
   setupYouTubeTracking();
   window.PlatformAnalytics = { track };
 })();
+
 
 
 
