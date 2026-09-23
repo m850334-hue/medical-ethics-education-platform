@@ -96,8 +96,29 @@
       if (course) track("infographic_open", { course_id: course, once_key: "infographic_open:" + course });
     }
   });
+  function setupYouTubeTracking() {
+    const iframe = document.querySelector("iframe#youtube-player");
+    const course = courseFromPath();
+    if (!iframe || !course) return;
+    const listen = () => {
+      iframe.contentWindow?.postMessage(JSON.stringify({ event: "listening", id: "youtube-player" }), "*");
+      iframe.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }), "*");
+    };
+    iframe.addEventListener("load", listen);
+    listen();
+    window.addEventListener("message", event => {
+      if (event.source !== iframe.contentWindow) return;
+      let data;
+      try { data = typeof event.data === "string" ? JSON.parse(event.data) : event.data; } catch (_) { return; }
+      if (data?.event === "infoDelivery" && data.info?.playerState === 1) {
+        track("video_start", { course_id: course, once_key: "video_start:" + course });
+      }
+    });
+  }
+  setupYouTubeTracking();
   window.PlatformAnalytics = { track };
 })();
+
 
 
 
